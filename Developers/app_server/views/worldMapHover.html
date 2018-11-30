@@ -1,0 +1,143 @@
+
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" href="worldmap.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
+  <link rel="stylesheet" media="all" href="https://germini.info/js/jqvmap/src/jquery-jvectormap.css"/>
+  <script src="https://germini.info/js/jqvmap/src/jquery-1.8.2.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/jquery-jvectormap.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/jquery-mousewheel.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/jvectormap.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/abstract-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/abstract-canvas-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/abstract-shape-element.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/svg-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-group-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-canvas-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-shape-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-path-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-circle-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-image-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/svg-text-element.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/vml-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-group-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-canvas-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-shape-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-path-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-circle-element.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/vml-image-element.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/map-object.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/region.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/marker.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/vector-canvas.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/simple-scale.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/ordinal-scale.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/numeric-scale.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/color-scale.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/legend.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/data-series.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/proj.js"></script>
+  <script src="https://germini.info/js/jqvmap/src/map.js"></script>
+
+  <script src="https://germini.info/js/jqvmap/src/jquery-jvectormap-world-mill-en.js"></script>
+  <style>
+  	input[type=text], select, textarea {
+		    width: 50%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    resize: vertical;
+		    margin-bottom: 5px;
+		}
+		
+		label {
+		    padding: 12px 12px 12px 0;
+		    display: inline-block;
+		}
+		
+		input[type=submit] {
+			    background-color: orange;
+			    color: black;
+			    padding: 12px 30px;
+			    border: none;
+			    margin-top: 2em;
+			    border-radius: 4px;
+			    cursor: pointer;
+			    text-align: auto;
+			    margin-left: 2em;
+		}
+			
+		input[type=submit]:hover {
+		    background-color: #04A3ED;
+		    color: white;
+		}
+		
+  </style>
+  <script>
+    jQuery.noConflict();
+    jQuery(function(){
+      var $ = jQuery;
+
+
+      $('#map1').vectorMap({
+
+          map: 'world_mill_en',
+          series: {
+            regions: [{
+
+              scale: ['#FFEECF', '#FF2C2C'],
+              normalizeFunction: 'polynomial'
+            }]
+          },
+          onRegionClick: function(event, code){
+              var map = $('#map1').vectorMap('get', 'mapObject');
+
+              var varValue = map.getRegionName(code);
+              document.getElementById("country").value = varValue;
+              document.getElementById("countryform").submit();
+          }
+        });
+    })
+
+
+  </script>
+
+
+<body background="bkg.jpg"> 
+	<div class="menu">
+	    <div class="container-fluid">
+			<div class="navbar-header" style="padding: 20px">
+				<a href="/frontPage">NationPedia</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/homepage" > Home</a></li>
+					<li><a href="/aboutLink"> About Us</a></li>
+					<li><a href="/accountLink"> Account</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<br>
+	<br>
+	<div style="height: 5px"></div>
+	<div id="map1" style="width: 100%; height: 550px"></div>
+	<div class="container">
+		<form id="countryform" action="/countryDetails">
+		  <input type="hidden" id="country" name="country" value="country1"><br>
+		</form>
+	</div>
+	
+</body>
+

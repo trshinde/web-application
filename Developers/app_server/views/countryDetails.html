@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Country Page</title>
+  <link rel="stylesheet" href="worldmap.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+  	input[type=text], select, textarea {
+		    width: 50%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    resize: vertical;
+		    margin-bottom: 5px;
+		}
+		
+		label {
+		    padding: 12px 12px 12px 0;
+		    display: inline-block;
+		}
+		
+		input[type=submit] {
+			    background-color: orange;
+			    color: black;
+			    padding: 12px 30px;
+			    border: none;
+			    margin-top: 2em;
+			    border-radius: 4px;
+			    cursor: pointer;
+			    text-align: auto;
+			    margin-left: 2em;
+		}
+			
+		input[type=submit]:hover {
+		    background-color: #04A3ED;
+		    color: white;
+		}
+		.container{
+		    width: 50em;
+		    box-shadow: 5px 5px 5px black;
+		    border:5px solid black;
+		    margin-left: auto;
+		    margin-right: auto;
+		    border-radius: 5px;
+		    background-color: E0 FF FF;
+		    padding: 20px;
+		    margin-top: 25px; 
+		}
+  </style>
+  <script type="text/javascript">
+      var varSection = window.location.search.substr(1);
+      var keyValueArray = varSection.split("=");
+
+      if(keyValueArray[0]=="country") {
+        var varValue=keyValueArray[1];
+        for(var i=0;i<varValue.length;i++){
+          varValue = varValue.replace("+"," ");
+        }
+
+      }
+
+
+      const url = 'https://restcountries.eu/rest/v2/all';
+      var result = "";
+
+      fetch(url)
+      .then((resp) => resp.json())
+      .then(function(data) {
+
+        for(i=0;i<data.length;i++){
+          document.getElementById("heading").innerHTML = varValue;
+          var name = data[i].name;
+
+          var namel = name.toLowerCase();
+          var varValuel = varValue.toLowerCase();
+          if(namel.localeCompare(varValuel) == 0){
+            
+            
+            var region1 = "Region:";
+            var capital1 = "Capital:";
+            var currencyname1 = "Currency Name:";
+            var currencysymbol1 = "Currency Symbol";
+            var currencycode1 = "Currency Code";
+            var nativename1 = "Native Name:";
+            var area1 = "Area:";
+            var population1 = "Population:";
+            var timezone1 = "Time Zones:";
+
+            var flag = document.getElementById("flag");
+            flag.addEventListener("load",function(){
+              this.classList.remove("hidden");
+            });
+            flag.src = data[i].flag;
+            var currencies = data[i].currencies;
+            console.log(currencies[0])
+            document.getElementById("capital").innerHTML = capital1.bold()+" "+ data[i].capital;
+            document.getElementById("nativename").innerHTML = nativename1.bold()+" "+data[i].nativeName;
+            document.getElementById("region").innerHTML = region1.bold()+" "+data[i].region;
+            document.getElementById("currencyname").innerHTML = currencyname1.bold()+" "+currencies[0].name;
+            document.getElementById("currencysymbol").innerHTML = currencysymbol1.bold()+" "+currencies[0].symbol;
+            document.getElementById("currencycode").innerHTML = currencycode1.bold()+" "+currencies[0].code;
+            document.getElementById("area").innerHTML = area1.bold()+" "+data[i].area+" sq km";
+            document.getElementById("population").innerHTML = population1.bold()+" "+data[i].population;
+            document.getElementById("timezone").innerHTML = timezone1.bold()+" "+data[i].timezones;
+          }
+
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+
+  </script>
+  <style>
+  .box {
+    border: 1px solid #a2a9b1;
+    border-spacing: 3px;
+    background-color: #f8f9fa;
+    color: black;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    width: 500px;
+    margin-left: 500px;
+    text-align: center;
+  }
+  .hidden{
+    display: none;
+  }
+  img{
+
+    width: 100px;
+  }
+
+  </style>
+</head>
+<body background="bkg.jpg">
+	<div class="menu">
+	    <div class="container-fluid">
+			<div class="navbar-header" style="padding: 20px">
+				<a href="/frontPage">NationPedia</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/homepage" > Home</a></li>
+					<li><a href="/worldMap"> Country Details</a>
+					<li><a href="/aboutLink"> About Us</a></li>
+					<li><a href="/accountLink"> Account</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<br>
+	<br>
+	<table class = "box" align="center" id="details">
+		 <tr>
+		   <th id="heading" style="text-align:center;">
+		   </th>
+		 </tr>
+		 <tr>
+		   <td align="center"><img id="flag" class="hidden"></td>
+		 </tr>
+		 <tr>
+		   <td id="capital" align="center"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="nativename"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="region"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="currencyname"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="currencysymbol"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="currencycode"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="area"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="population"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="timezone"></td>
+		 </tr>
+		 <tr>
+		   <td align="center" id="borders"></td>
+		 </tr>
+	
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+block content
+	h3 User List
+	table(border='1') 
+		thead
+			tr
+				th="FirstName"
+				th="LastName"
+				th="DOB"
+				th="Email"
+				th="Mobile"
+				th="Country"
+		tbody
+			each user in userlist
+				tr
+					td=user.firstName
+					td=user.lastName
+					td=user.DOB
+					td=user.email
+					td=user.mobile
+					td=user.country

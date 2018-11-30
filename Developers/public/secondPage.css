@@ -1,0 +1,35 @@
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    height: 4%;
+} 
+
+.textClass {
+	text-align: center;	
+	text: bold;
+}
+
+body{
+	background-color: white;
+	background-image: url("houndstooth-pattern.png");
+	background-repeat: true;
+	
+}
+
+.p {
+	 text-align: right;
+}
+
+.countryName {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+#dataType .p{
+	text-align: left;
+	
+}
+   h2 {
+      float: left;
+    }

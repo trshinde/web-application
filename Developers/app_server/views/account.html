@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+	
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="account.css">
+    <style>
+    	h2 {
+		  text-align: center;
+		  margin-top: 0px;
+		}
+		* {
+		    box-sizing: border-box;
+		}
+		
+		fieldset {
+		  width: 20em;
+		  box-shadow: 5px 5px 5px gray;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		
+		input[type=text], select, textarea {
+		    width: 50%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    resize: vertical;
+		    margin-bottom: 5px;
+		}
+		
+		label {
+		    padding: 12px 12px 12px 0;
+		    display: inline-block;
+		}
+		
+		input[type=submit] {
+			    background-color: orange;
+			    color: black;
+			    padding: 12px 30px;
+			    border: none;
+			    margin-top: 2em;
+			    border-radius: 4px;
+			    cursor: pointer;
+			    text-align: auto;
+			    margin-left: 2em;
+		}
+			
+		input[type=submit]:hover {
+		    background-color: #04A3ED;
+		    color: white;
+		}
+		.container{
+		    width: 50em;
+		    box-shadow: 5px 5px 5px black;
+		    border:5px solid black;
+		    margin-left: auto;
+		    margin-right: auto;
+		    border-radius: 5px;
+		    background-color: E0 FF FF;
+		    padding: 20px;
+		    margin-top: 10%; 
+		}
+		
+		.col-25 {
+		    float: left;
+		    width: 25%;
+		    margin-top: 6px;
+		}
+		
+		.col-75 {
+		    float: left;
+		    width: 75%;
+		    margin-top: 6px;
+		}
+		
+		/* Clear floats after the columns */
+		.row:after {
+		    content: "";
+		    display: table;
+		    clear: both;
+		}
+		
+		
+		input:required {
+		  border: 1px solid blue;
+		}
+		
+		input:invalid {
+		  color: red;
+		}
+    	
+    </style>
+    <script>
+    </script>
+    
+</head>
+
+<body background="bkg.jpg">
+	<div class="menu">
+	    <div class="container-fluid">
+			<div class="navbar-header" style="padding: 20px">
+				<a href="/homepage">NationPedia</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/homepage" > Home</a></li>
+					<li><a href="/aboutLink"> About Us</a></li>
+					<li><a href="/worldMap"> Country Details</a>
+					
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	</br>
+	</br>
+	
+	
+	<div>
+		<div class="container">
+			<h2 align="center">Account</h2>
+			<form action="" >
+				
+				<div class="row">
+					<div class="col-25" align="center">
+						<label>Email ID</label>
+					</div>
+					<div class="col-75" align="center">
+						<input type = "text" name="email" placeholder = "xxxxx@xxxxx.xxx" pattern = "^.+@.+\..{2,4}$" id = "email" required/>
+					</div>
+					
+				</div>
+				<div class="row" align="center">
+						<input type="submit" value="View User" align="left" formaction="/userlist/:email"/>
+						<input type="submit" value="Update User" align="center" formaction="/edituser"/>
+						<input type="submit" value="Unsubscribe" align="right" formaction="/deleteuser/:email"/>
+						<input type="submit" value="Subscribe" align="center" formaction="subscribeLink"/>
+				</div>
+				
+					
+				
+				
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	
+</body>
+</html>

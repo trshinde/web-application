@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Form</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="subscribe.css" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+    	h2 {
+		  text-align: center;
+		  margin-top: 0px;
+		}
+		* {
+		    box-sizing: border-box;
+		}
+		
+		fieldset {
+		  width: 20em;
+		  box-shadow: 5px 5px 5px gray;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		
+		input[type=text], select, textarea {
+		    width: 50%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    resize: vertical;
+		    margin-bottom: 5px;
+		}
+		
+		label {
+		    padding: 12px 12px 12px 0;
+		    display: inline-block;
+		}
+		
+		input[type=submit] {
+			    background-color: orange;
+			    color: black;
+			    padding: 12px 30px;
+			    border: none;
+			    margin-top: 4em;
+			    border-radius: 4px;
+			    cursor: pointer;
+			    text-align: auto;
+			    margin-left: 2em;
+		}
+			
+		input[type=submit]:hover {
+		    background-color: #04A3ED;
+		    color: white;
+		}
+		.container{
+		    width: 50em;
+		    box-shadow: 5px 5px 5px black;
+		    border:5px solid black;
+		    margin-left: auto;
+		    margin-right: auto;
+		    border-radius: 5px;
+		    background-color: E0 FF FF;
+		    padding: 20px;
+		    margin-top: 10%; 
+		}
+		
+		.col-25 {
+		    float: left;
+		    width: 25%;
+		    margin-top: 6px;
+		}
+		
+		.col-75 {
+		    float: left;
+		    width: 75%;
+		    margin-top: 6px;
+		}
+		
+		/* Clear floats after the columns */
+		.row:after {
+		    content: "";
+		    display: table;
+		    clear: both;
+		}
+		
+		
+		input:required {
+		  border: 1px solid blue;
+		}
+		
+		input:invalid {
+		  color: red;
+		}
+    	
+    	
+    </style>
+    <script>
+    	
+    	window.onload= function(){
+    		
+    		
+    		var varSection = window.location.search.substr(1);
+    		var keyValueArray = varSection.split("=");
+    		
+    		if(keyValueArray[0]=="email") { 
+    			varValue=keyValueArray[1]; 
+    			varValue1=varValue.replace("%40","@");
+    			document.getElementById("email").value = varValue1;
+  
+    		}
+    		
+    		
+    	}
+		
+
+    </script>
+   
+    
+</head>
+
+<body background="bkg.jpg">
+	<div class="menu" >
+	    <div class="container-fluid">
+			<div class="navbar-header" style="padding: 20px">
+				<a href="/frontPage">NationPedia</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/homepage" > Home</a></li>
+					<li><a href="/worldMap"> Country Details</a>
+					<li><a href="/aboutLink"> About Us</a></li>
+					<li><a href="/accountLink"> Account</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br>
+	
+	
+	
+	<div class="container">
+		<h2 align="center">Update Form</h2>
+		<br>
+		<form method=post action="/updateuser" >
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>First Name</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type=text name="firstName" placeholder="Enter First Name" id="fname" required/>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>Last Name</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type=text name="lastName" placeholder="Enter Last Name" id="lname" required/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>Date Of Birth</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type=text name="DOB" id="datepicker" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>Country</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type=text name="country" placeholder="Enter Country" id="country" required/>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>Mobile</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type=text name="mobile" placeholder="(xxx) xxx-xxxx" pattern = "^\(\d{3}\) *\d{3}-\d{4}$" id="phone" required/>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-25" align="center">
+					<label>Email ID</label>
+				</div>
+				<div class="col-75" align="center">
+					<input type = "text" name="email" placeholder = "xxxxx@xxxxx.xxx" pattern = "^.+@.+\..{2,4}$" id = "email" required/>
+				</div>
+				
+			</div>
+			
+			<div class="row" align="center" style="margin-top:2em;">
+				<div class="buttons">
+					<button id="button">Submit</button>
+				</div>
+			</div>
+			
+			
+			
+		</form>
+	</div>
+	
+	
+	<script src="jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script>
+	
+		$( "#button" ).button();
+		$( "#button-icon" ).button({
+			icon: "ui-icon-gear",
+			showLabel: false
+		});
+		
+		$( "#datepicker" ).datepicker({
+			inline: true
+		});
+		
+		
+				
+	</script>
+</body>
+</html>
