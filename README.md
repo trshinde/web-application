@@ -26,6 +26,7 @@ any updated record. And it is a open source form with no user authentication req
 1) Git clone the link: [ https://github.com/trshinde/web-application.git ] into any local folder.
 2) If running through command line prompt, reach the directory of local folder.
 3) Run through dependncies of package.json file, install npm commands.
+   Run -->  1) cd web-application, 2) cd Developers  
 4) Give command: [ npm start] or [ node app.js]
 5) Locally host in browser at: (https://localhost:3000)
 6) If running through eclipse or any editor, add the whole Developers folder into your editor and  click "run" command.
