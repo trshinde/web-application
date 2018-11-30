@@ -1,6 +1,6 @@
 # Full-stack-web-application
-web-application
 
+                                          Story
 
 This is the web application to find out the development details for each country from 
 last 20-30 years based on some factors like: Electricuty, Population, Education, Economy, Communication, Gender etc.
