@@ -6,13 +6,15 @@ This is the web application to find out the development details for each country
 last 20-30 years based on some factors like: Electricuty, Population, Education, Economy, Communication, Gender etc.
 Using tableau public for visualizations, we created dashboards for each of these above mentioned factors.
 
-Tools and Technolgies used:
+Tools,Technolgies and skills used:
 1) HTML5, CSS3, JavaScript,
 2) Jade template,
 3) Mongoose for MongoDB database,
 4) NodeJS, Express
 5) jQuery library,
-6) Editor used: Eclipse
+6) Tableau Public and D3 charts for data visualization, 
+7) Tooltip property to hover interactive world map.
+8) Editor used: Eclipse
 
                                                         Features
                                                         
@@ -28,6 +30,10 @@ any updated record. And it is a open source form with no user authentication req
 3) Run through dependncies of package.json file, install npm commands.
    Run -->  1) cd web-application, 2) cd Developers  
 4) Give command: [ npm start] or [ node app.js]
+5) Install mongo and mongodb database locally,
+  run 2 different terminals to process database
+    1st terminal: mongod
+    2nd terminal: mongo 
 5) Locally host in browser at: (https://localhost:3000)
 6) If running through eclipse or any editor, add the whole Developers folder into your editor and  click "run" command.
 
